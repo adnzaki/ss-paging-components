@@ -1,7 +1,7 @@
-import { h, ref, onMounted } from "vue";
-import { setPagingState } from "../helpers";
+import { h, defineComponent, ref, onMounted } from "vue";
+import { setPagingState, densePadding } from "../helpers";
 
-export default {  
+export default defineComponent({  
   props: {
     paging: {
       type: Object,
@@ -24,7 +24,6 @@ export default {
       default: [10, 25, 50, 100, 250]
     },
     selected: {
-      type: Number,
       default: null
     },
     dense: {
@@ -32,7 +31,8 @@ export default {
       default: false
     }
   },
-  setup(props) {
+  emits: ['update:selected'],
+  setup(props, { emit }) {
     // Pagination instance
     const paging = props.paging
 
@@ -65,8 +65,6 @@ export default {
       //watch(props, updateSelectedOption)
     }
 
-    const densePadding = { padding: '6px 12px' }
-
     // attributes for Select
     const selectAttrs = {
       class: 'sp-select',
@@ -91,6 +89,9 @@ export default {
 
           label.value = `${row} ${props.rowLabel}`
           paging.showPerPage()
+          
+          // allow users to do something after internal operation completed
+          emit('update:selected', event, row)
         }
       }
     }
@@ -109,4 +110,4 @@ export default {
       ) : ''
     ]
   }
-}
+})

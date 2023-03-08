@@ -34,6 +34,8 @@ onMounted(() => {
   })
 })
 
+const selected = (event, row) => console.log(event)
+
 </script>
 
 <template>

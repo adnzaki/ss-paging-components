@@ -1,10 +1,8 @@
-:root {
-  --sp-select-padding: 10px 15px;
-}
+
 
 .sp-select {
   min-width: 50px;
-  padding: var(--sp-select-padding);
+  padding: var(--sp-default-padding);
   cursor: pointer;
   border: solid 0.8px #b3afaf81;
   border-radius: 5px;  
@@ -28,7 +26,7 @@
 }
 
 .sp-select-options li {
-  padding: var(--sp-select-padding);
+  padding: var(--sp-default-padding);
   cursor: pointer;
 }
 
