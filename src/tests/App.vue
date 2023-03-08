@@ -3,10 +3,10 @@ import { usePaging } from 'ss-paging-vue';
 import { onMounted } from 'vue';
 
 const paging = usePaging()
-onMounted(() => {
-  const limit = 25
-  paging.state.rows = limit
+const limit = 25
+paging.state.rows = limit
 
+onMounted(() => {
   paging.getData({
     lang: 'english',
     limit,
@@ -37,6 +37,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <sp-select :selected="50" dense :paging="paging">
+  <sp-select :selected="limit" dense :paging="paging">
   </sp-select>
 </template>

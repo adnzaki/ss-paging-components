@@ -15,6 +15,10 @@ export default {
       type: String,
       default: 'Choose Option'
     },
+    rowLabel: {
+      type: String,
+      default: 'rows'
+    },
     options: {
       type: Array,
       default: [10, 25, 50, 100, 250]
@@ -53,7 +57,7 @@ export default {
       const updateSelectedOption = () => {
         if(props.options.includes(props.selected)) {
           // only valid selected is accepted
-          label.value = `${props.selected} row`
+          label.value = `${props.selected} ${props.rowLabel}`
         }
       }
 
@@ -85,7 +89,7 @@ export default {
             value: row
           })
 
-          label.value = `${row} rows`
+          label.value = `${row} ${props.rowLabel}`
           paging.showPerPage()
         }
       }
@@ -100,7 +104,7 @@ export default {
       // Options element
       showOptions.value ? h('ul', { class: 'sp-select-options' }, 
         props.options.map((row, index) => {
-          return h('li', optionsAttrs(row, index), `${row} rows`)
+          return h('li', optionsAttrs(row, index), `${row} ${props.rowLabel}`)
         })
       ) : ''
     ]
