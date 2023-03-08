@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "comp:build": "rollup src/main.js --file dist/ssp-components.js --format iife --name SspComponents --globals vue:Vue"
+    "comp:build": "rollup index.js --file dist/ss-components.js --format iife --name SSComponents --globals vue:Vue"
   },
   "dependencies": {
     "pinia": "^2.0.33",

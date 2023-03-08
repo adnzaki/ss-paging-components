@@ -1,4 +1,4 @@
-import SPSelect from "./src/components/select";
+import SPSelect from "./src/components/select/SPSelect";
 
 export {
   SPSelect
