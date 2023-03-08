@@ -1,0 +1,46 @@
+:root {
+  --sp-select-padding: 10px 15px;
+}
+
+.sp-select {
+  min-width: 50px;
+  padding: var(--sp-select-padding);
+  cursor: pointer;
+  border: solid 0.8px #b3afaf81;
+  border-radius: 5px;  
+}
+
+.sp-select span {
+  float: right;
+  margin-left: 20px;
+}
+
+.sp-select-options {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: 1px 2px 8px rgba(105, 105, 105, 0.485);
+  margin-top: 3px;
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  position: relative;
+  --border-radius: 5px;
+}
+
+.sp-select-options li {
+  padding: var(--sp-select-padding);
+  cursor: pointer;
+}
+
+.sp-select-options li:first-child {
+  border-top-right-radius: var(--border-radius);
+  border-top-left-radius: var(--border-radius);
+}
+
+.sp-select-options li:last-child {
+  border-bottom-right-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+}
+.sp-select-options li:hover {
+  background-color: #f7f2f2;
+}
